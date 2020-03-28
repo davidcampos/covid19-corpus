@@ -50,6 +50,8 @@ python scripts/pubmed/pubmed.py
 python scripts/pubmed/json2raw.py
 ```
 
+Please not that sentences in other languages than english are currently being discarded.
+
 # Resources
 The following resources were applied to annotated each entity type:
 - Disorder (DISO): [UMLS](https://www.nlm.nih.gov/research/umls/index.html)
