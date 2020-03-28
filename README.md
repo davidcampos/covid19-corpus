@@ -3,6 +3,8 @@ COVID-19 corpus of abstracts from [Pubmed](https://pubmed.ncbi.nlm.nih.gov/) wit
 
 The corpus is **freely available** and can be used to further research topics related with COVID-19, contributing to **find insights** towards a **better understanding of the disease**, in order to **find effective drugs** and reduce the pandemic impact.
 
+**Blog post is available at [https://hands-on-tech.github.io/2020/03/28/covid19-corpus.html](https://hands-on-tech.github.io/2020/03/28/covid19-corpus.html)**.
+
 # Download
 [Download the latest version of the corpus](corpus).
 
@@ -36,7 +38,7 @@ Corpus file `corpus/pubmed_YYYYMMDD.zip` contains the following folders:
 
 On each folder you can find one file per article, with the Pubmed ID on its name.
   
-# Get articles
+# Articles
 To collect articles related with COVID-19 from Pubmed, the following [query](https://pubmed.ncbi.nlm.nih.gov/?term=%28%222000%22%5BDate+-+Publication%5D+%3A+%223000%22%5BDate+-+Publication%5D%29+AND+%28%28COVID-19%29+OR+%28Coronavirus%29+OR+%28Corona+virus%29+OR+%282019-nCoV%29+OR+%28SARS-CoV%29+OR+%28MERS-CoV%29+OR+%28Severe+Acute+Respiratory+Syndrome%29+OR+%28Middle+East+Respiratory+Syndrome%29+OR+%282019+novel+coronavirus+disease%5BMeSH+Terms%5D%29+OR+%282019+novel+coronavirus+infection%5BMeSH+Terms%5D%29+OR+%282019-nCoV+disease%5BMeSH+Terms%5D%29+OR+%282019-nCoV+infection%5BMeSH+Terms%5D%29+OR+%28coronavirus+disease+2019%5BMeSH+Terms%5D%29+OR+%28coronavirus+disease-19%5BMeSH+Terms%5D%29%29) was applied:
 ```
 ("2000"[Date - Publication] : "3000"[Date - Publication]) AND ((COVID-19) OR (Coronavirus) OR (Corona virus) OR (2019-nCoV) OR (SARS-CoV) OR (MERS-CoV) OR (Severe Acute Respiratory Syndrome) OR (Middle East Respiratory Syndrome) OR (2019 novel coronavirus disease[MeSH Terms]) OR (2019 novel coronavirus infection[MeSH Terms]) OR (2019-nCoV disease[MeSH Terms]) OR (2019-nCoV infection[MeSH Terms]) OR (coronavirus disease 2019[MeSH Terms]) OR (coronavirus disease-19[MeSH Terms]))
