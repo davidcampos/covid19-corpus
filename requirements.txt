@@ -1,0 +1,2 @@
+pymed==0.8.9
+langdetect==1.0.8
