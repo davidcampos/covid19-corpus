@@ -13,6 +13,7 @@ Overall corpus statistics:
 - Number of **unique** entities: **29420**
 
 Number of annotations per entity type:
+
 | Entity | # Occurrences| # Unique |
 |--------|--------------|------------|
 | Disorder | 165477 | 4476 | 
@@ -35,10 +36,16 @@ Corpus file `corpus/pubmed_YYYYMMDD.zip` contains the following folders:
 
 On each folder you can find one file per article, with the Pubmed ID on its name.
   
-# Query
+# Get articles
 To collect articles related with COVID-19 from Pubmed, the following [query](https://pubmed.ncbi.nlm.nih.gov/?term=%28%222000%22%5BDate+-+Publication%5D+%3A+%223000%22%5BDate+-+Publication%5D%29+AND+%28%28COVID-19%29+OR+%28Coronavirus%29+OR+%28Corona+virus%29+OR+%282019-nCoV%29+OR+%28SARS-CoV%29+OR+%28MERS-CoV%29+OR+%28Severe+Acute+Respiratory+Syndrome%29+OR+%28Middle+East+Respiratory+Syndrome%29+OR+%282019+novel+coronavirus+disease%5BMeSH+Terms%5D%29+OR+%282019+novel+coronavirus+infection%5BMeSH+Terms%5D%29+OR+%282019-nCoV+disease%5BMeSH+Terms%5D%29+OR+%282019-nCoV+infection%5BMeSH+Terms%5D%29+OR+%28coronavirus+disease+2019%5BMeSH+Terms%5D%29+OR+%28coronavirus+disease-19%5BMeSH+Terms%5D%29%29) was applied:
 ```
 ("2000"[Date - Publication] : "3000"[Date - Publication]) AND ((COVID-19) OR (Coronavirus) OR (Corona virus) OR (2019-nCoV) OR (SARS-CoV) OR (MERS-CoV) OR (Severe Acute Respiratory Syndrome) OR (Middle East Respiratory Syndrome) OR (2019 novel coronavirus disease[MeSH Terms]) OR (2019 novel coronavirus infection[MeSH Terms]) OR (2019-nCoV disease[MeSH Terms]) OR (2019-nCoV infection[MeSH Terms]) OR (coronavirus disease 2019[MeSH Terms]) OR (coronavirus disease-19[MeSH Terms]))
+```
+
+To collect the articles in JSON and then extract the text in raw format:
+```bash
+python scripts/pubmed/pubmed.py
+python scripts/pubmed/json2raw.py
 ```
 
 # Resources
@@ -55,17 +62,18 @@ The following resources were applied to annotated each entity type:
 - Pathway (PATH): [NCBI BioSystems](https://www.ncbi.nlm.nih.gov/biosystems)
 - microRNA (MRNA): [miRBase](http://www.mirbase.org)
 
-For more details please check the [article](https://doi.org/10.1186/1471-2105-14-281).
-Moreover, **Disorder and Species entities were extended to include COVID-19 entities of interest**.
+For more details please check the [article](https://doi.org/10.1186/1471-2105-14-281). Unfortunately dictionaries could not be shared for download, due to UMLS usage license. Nevertheless, keep in mind that **Disorder and Species entities were extended to include COVID-19 entities of interest**.
 
 # Annotation
 [Neji](https://github.com/BMDSoftware/neji) is the tool used for NER (Named Entity Recognition) and normalization, which is optimized for biomedical scientific articles and provides an easy to use CLI.
 For more details please check the [article](https://doi.org/10.1186/1471-2105-14-281).
 
+The annotation script is available at `scripts/pubmed/annotate.sh`.
+
 # Visualization
 [brat](https://brat.nlplab.org/) is used to visualize the annotations in the articles. Find below the instructions to run the tool, create corpus for brat and visualize annotations. 
 
-Install and run brat:
+### Install and run brat:
 ```bash
 cd tools
 unzip brat-1.3.zip
@@ -74,13 +82,14 @@ cd brat-1.3
 python standalone.py
 ```
 
-Create corpus for brat visualization:
+### Create corpus for visualization:
 ```bash
 ./scripts/pubmed/brat.sh
 ln -s corpus/pubmed/brat tools/brat-1.3/data/covid19-corpus
 ```
+### Visualize corpus:
+Go to [http://localhost:8001/index.xhtml#/covid19-corpus/](http://localhost:8001/index.xhtml#/covid19-corpus/) and wait for the articles to load:
 
-Visualize corpus on [http://localhost:8001/index.xhtml#/covid19-corpus/](http://localhost:8001/index.xhtml#/covid19-corpus/) (may take a while to load articles):
 ![Annotations visualization](assets/annotations-example.png)
 
 # Example
@@ -198,16 +207,16 @@ N21	Reference T17 UMLS:::DISO	COVID-19
 ```
 
 # Changelog
-### 28-03-2020
+### 28-03-2020:
 - Initial release.
 
 # Next steps
 Possible next steps to improve the COVID-19 corpus:
-- Annotate methods, results and conclusions from JSON files;
+- Annotate "methods", "results" and "conclusions" sections from JSON files;
 - Further optimize resources to target entities related with COVID-19;
 - Include additional entities of relevance;
 - Annotate PMC and Elsevier full text articles;
-- Get co-occurrences to understand which entities might be related more often;
+- Collect co-occurrences to understand which entities might be related more often;
 - Index articles and annotations and provide access to search tool.
 
 # Contact
