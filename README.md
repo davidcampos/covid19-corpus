@@ -1,5 +1,7 @@
 # COVID-19 Corpus
-COVID-19 corpus of abstracts from [Pubmed](https://pubmed.ncbi.nlm.nih.gov/) with annotated biomedical entities. It is **freely available** and can be used to further research topics related with COVID-19, contributing to **find insights** and **help understanding the disease** to **find effective drugs**.
+COVID-19 corpus of abstracts from [Pubmed](https://pubmed.ncbi.nlm.nih.gov/) with annotated biomedical entities of interest.
+
+The corpus is **freely available** and can be used to further research topics related with COVID-19, contributing to **find insights** towards a **better understanding of the disease**, in order to **find effective drugs** and reduce the pandemic impact.
 
 # Download
 [Download the latest version of the corpus](corpus).
