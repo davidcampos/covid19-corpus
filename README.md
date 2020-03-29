@@ -10,25 +10,25 @@ The corpus is **freely available** and can be used to further research topics re
 
 # Statistics
 Overall corpus statistics:
-- Number of **abstracts**: **17739**
-- Number of entity **occurrences**: **627288**
-- Number of **unique** entities: **29420**
+- Number of **abstracts**: **17740**
+- Number of entity **occurrences**: **683349**
+- Number of **unique** entities: **29423**
 
 Number of annotations per entity type:
 
 | Entity | # Occurrences| # Unique |
 |--------|--------------|------------|
-| Disorder | 165477 | 4476 | 
-| Species | 120977 | 2170 |
-| Chemical or Drug | 65010 | 2766 |
-| Gene or Protein | 47132 | 15025 |
-| Enzyme | 7155 | 282 |
-| Anatomy | 96236 | 2369 |
-| Biological Process | 68233 | 1561 |
-| Molecular Function | 13850 | 383 |
-| Cellular Component | 37130 | 263 |
-| Pathway | 6062 | 97 |
-| microRNA | 26 | 28 |
+|  Disorder  |  183528  |  4477  |
+|  Species  |  128356  |  2170  |
+|  Chemical or Drug  |  70619  |  2768  |
+|  Gene and Protein  |  51114  |  15025  |
+|  Enzyme  |  7892  |  282  |
+|  Anatomy  |  106401  |  2369  |
+|  Biological Process  |  74286  |  1561  |
+|  Molecular Function  |  15089  |  383  |
+|  Cellular Component  |  39451  |  263  |
+|  Pathway  |  6587  |  97  |
+|  microRNA  |  26  |  28  |
 
 # Structure
 Corpus file `corpus/pubmed_YYYYMMDD.zip` contains the following folders:
@@ -213,10 +213,12 @@ N21	Reference T17 UMLS:::DISO	COVID-19
 # Changelog
 ### 28-03-2020:
 - Initial release.
+### 29-03-2020:
+- Annotate "methods", "results" and "conclusions" sections from JSON files.
 
 # Next steps
 Possible next steps to improve the COVID-19 corpus:
-- Annotate "methods", "results" and "conclusions" sections from JSON files;
+- ~~Annotate "methods", "results" and "conclusions" sections from JSON files~~;
 - Further optimize resources to target entities related with COVID-19;
 - Include additional entities of relevance;
 - Annotate PMC and Elsevier full text articles;

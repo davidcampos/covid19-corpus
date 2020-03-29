@@ -5,7 +5,7 @@ import re
 def main():
     input_folder = Path.cwd().parent / 'corpus' / 'pubmed' / 'annotations'
     abstracts = 0
-    entities = {
+    occurrences = {
         "PRGE": 0,
         "SPEC": 0,
         "ANAT": 0,
@@ -31,6 +31,20 @@ def main():
         "PATH": [],
         "PROC": []
     }
+    names = {
+        "DISO": "Disorder",
+        "SPEC": "Species",
+        "CHED": "Chemical or Drug",
+        "PRGE": "Gene and Protein",
+        "ENZY": "Enzyme",
+        "ANAT": "Anatomy",
+        "PROC": "Biological Process",
+        "FUNC": "Molecular Function",
+        "COMP": "Cellular Component",
+        "PATH": "Pathway",
+        "MRNA": "microRNA"
+    }
+
     id_pattern = re.compile("N[0-9]+\tReference T[0-9]+ (.*?)\t")
     entity_pattern = re.compile("T[0-9]+\t(.+?) [0-9]+ [0-9]+")
 
@@ -40,7 +54,7 @@ def main():
             for line in fp.readlines():
                 if entity_match := re.match(entity_pattern, line):
                     group = entity_match.group(1).strip()
-                    entities[group] += 1
+                    occurrences[group] += 1
                 elif id_match := re.match(id_pattern, line):
                     identifier = id_match.group(1).strip()
                     group = identifier.split(":")[3].strip()
@@ -49,18 +63,15 @@ def main():
 
     print('# Abstracts: ', abstracts)
 
-    print('# Occurrences per entity:')
+    print('# Per entity:')
     total_occurrences = 0
-    for group in entities:
-        print('   ', group, ': ', entities[group])
-        total_occurrences += entities[group]
-    print('# Total Occurrences: ', total_occurrences)
-
-    print('# Unique entities:')
     total_unique = 0
-    for group in unique:
-        print('   ', group, ': ', len(unique[group]))
+    for group in names:
+        print('| ', names[group], ' | ', occurrences[group], ' | ', len(unique[group]), ' |')
+        total_occurrences += occurrences[group]
         total_unique += len(unique[group])
+
+    print('# Total Occurrences: ', total_occurrences)
     print('# Total Unique: ', total_unique)
 
 
