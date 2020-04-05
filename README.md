@@ -8,6 +8,8 @@ Two different datasets are provided:
 
 Annotated corpora are **freely available** and can be used to further research topics related with COVID-19, contributing to **find insights** towards a **better understanding of the disease**, in order to **find effective drugs** and reduce the pandemic impact.
 
+**Blog post is available at [https://hands-on-tech.github.io/2020/03/28/covid19-corpus.html](https://hands-on-tech.github.io/2020/03/28/covid19-corpus.html)**.
+
 # CORD-19
 Full-text research articles related with COVID-19 topics. Raw text and detailed description available on the [official CORD-19 corpus Kaggle page](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge).
 
