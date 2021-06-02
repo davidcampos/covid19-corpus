@@ -1,4 +1,4 @@
 pymed==0.8.9
 langdetect==1.0.8
 requests==2.23.0
-urllib3==1.25.8
+urllib3==1.26.5
